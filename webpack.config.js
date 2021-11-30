@@ -43,12 +43,9 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
-    // static: {
-    //   // directory: path.resolve(__dirname, 'build'),
-    //   directory: path.join(__dirname, '/'),
-    //   publicPath: '/build/',
-    //   // publicPath: '/',
-    // },
+    proxy: {
+      '/': 'http://localhost:3000'
+    },
     compress: true,
     hot: true
   },
