@@ -5,5 +5,7 @@
 <!-- Create database -->
 <!-- Hookup server with database -->
 <!-- Create entry to database -->
-Create button
+<!-- Create button -->
 Set up button to send post request to database
+Create food entry component
+Render food entry to webpage
