@@ -6,7 +6,7 @@ const FoodEntry = (props) => {
     <div id="foodEntry">
       {/* <h3>{props.name}</h3> */}
       {/* <label htmlFor="foodEntry">This is food name: {props.name}<br/> */}
-      <label>This is food name: {props.name}
+      <label>{props.name}
     
       <form onSubmit={(e) => props.updateFood(e, document.querySelector('#textbox').value)}>  
         {/* we don't want onsubmit to refresh the page. for now use button onclick, but I want to try preventDefault */}

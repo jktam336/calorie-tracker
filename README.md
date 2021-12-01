@@ -12,4 +12,5 @@
 <!-- Create food entry component -->
 <!-- Render food entry to webpage -->
 <!-- Grab latest entries from database -->
-setstate with latest entries
+<!-- setstate with latest entries -->
+render new entries on webpage after creating them

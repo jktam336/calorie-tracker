@@ -4,7 +4,6 @@ const foodController = {};
 
 foodController.getFood = (req, res, next) => {
   const text  = 'SELECT * FROM "public"."foodTest2"';
-  // const text  = 'SELECT people.*, species.name species, planets.name homeworld FROM people LEFT OUTER JOIN species ON species._id = people.species_id LEFT OUTER JOIN planets ON planets._id = people.homeworld_id';
   db
     .query(text)
     .then(data => {
@@ -77,7 +76,7 @@ foodController.addFood = (req, res, next) => {
   db
     .query(text, values)
     .then(data => {
-      console.log(data),
+      // console.log(data),
       next();
     }) 
     .catch(e => next(e));

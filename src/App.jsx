@@ -19,7 +19,7 @@ class App extends Component {
     console.log(`add food`);
     const url = "http://localhost:3000/api/food";
     const data = {
-      name: "test5",
+      name: "test6",
       serving_size: 1, 
       calories: 101
     };
@@ -39,6 +39,27 @@ class App extends Component {
           //   items: result.items
           // });
           console.log(`post response`, result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          throw(error);
+        }
+      )
+  }
+
+  // fetch entries from database on component mount
+  componentDidMount() {
+    const url = "http://localhost:3000/api/";
+    fetch(url)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            foodEntries: result
+          });
+          console.log(`get response`, result);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
