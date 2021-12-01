@@ -6,7 +6,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalCalories: 0
+      totalCalories: 0,
+      foodEntries: [{
+        name: 'test props',
+        calories: 101
+      }]
     }
     this.addFood = this.addFood.bind(this);
   }
@@ -46,11 +50,12 @@ class App extends Component {
   }
 
   render() {
+    const arrOfFoodEntries = this.state.foodEntries.map((entry, i) => <FoodEntry key = {i} name = {entry.name} calories = {entry.calories}/>)
     return(
       <div>
         <TotalsDisplay totalCalories = {this.state.totalCalories} />
         <button onClick = {this.addFood}>Add Food</button>
-        <FoodEntry name = 'test food entry'calories = '100'/>
+        {arrOfFoodEntries}
       </div>
     );
   }
