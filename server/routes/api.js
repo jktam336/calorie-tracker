@@ -5,8 +5,8 @@ const foodController = require('../controllers/foodController');
 const router = express.Router();
 
 router.get('/',
-  foodController.getCharacters,
-  (req, res) => res.status(200).json(res.locals.characters)
+  foodController.getFood,
+  (req, res) => res.status(200).json(res.locals.foodEntries)
 );
 
 router.get('/species',

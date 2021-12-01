@@ -10,6 +10,6 @@
     need to fix CORS policy
     figure out how to send request body -->
 <!-- Create food entry component -->
-Render food entry to webpage
-Grab latest entries from database
+<!-- Render food entry to webpage -->
+<!-- Grab latest entries from database -->
 setstate with latest entries
