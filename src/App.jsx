@@ -34,10 +34,9 @@ class App extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          // this.setState({
-          //   isLoaded: true,
-          //   items: result.items
-          // });
+          this.setState({
+            foodEntries: result
+          });
           console.log(`post response`, result);
         },
         // Note: it's important to handle errors here

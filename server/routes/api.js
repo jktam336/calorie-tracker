@@ -21,7 +21,8 @@ router.get('/homeworld',
 
 router.post('/food',
   foodController.addFood,
-  (req, res) => res.status(200).json({})
+  foodController.getFood,
+  (req, res) => res.status(200).json(res.locals.foodEntries)
 );
 
 module.exports = router;
