@@ -37,12 +37,12 @@ foodController.addFood = (req, res, next) => {
 
 foodController.deleteFood = (req, res, next) => {
   const text = `DELETE FROM "public"."foodTest2" WHERE name = $1;`;
-  const values = ['test6'];
-  // const values = [req.query.id];
+  // const values = ['test6'];
+  const values = [req.query.name];
   db
     .query(text, values)
     .then(data => {
-      console.log(`delete query successful`);
+      // console.log(`delete query successful`);
       next();
     })
     .catch(e => next(e));

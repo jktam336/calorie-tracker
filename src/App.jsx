@@ -13,6 +13,7 @@ class App extends Component {
       }]
     }
     this.addFood = this.addFood.bind(this);
+    this.deleteFood = this.deleteFood.bind(this);
   }
 
   addFood() {
@@ -48,6 +49,29 @@ class App extends Component {
       )
   }
 
+  deleteFood(name) {
+    const url = `http://localhost:3000/api/food?name=${name}`;
+    const init = {
+      method: 'DELETE'
+    }
+    fetch(url, init)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            foodEntries: result
+          });
+          console.log(`delete response`, result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          throw(error);
+        }
+      )
+  }
+
   // fetch entries from database on component mount
   componentDidMount() {
     const url = "http://localhost:3000/api/";
@@ -70,7 +94,12 @@ class App extends Component {
   }
 
   render() {
-    const arrOfFoodEntries = this.state.foodEntries.map((entry, i) => <FoodEntry key = {i} name = {entry.name} calories = {entry.calories}/>)
+    const arrOfFoodEntries = this.state.foodEntries.map((entry, i) => <FoodEntry 
+      key = {i} 
+      name = {entry.name} 
+      calories = {entry.calories}
+      deleteFood = {this.deleteFood}
+      />)
     return(
       <div>
         <TotalsDisplay totalCalories = {this.state.totalCalories} />

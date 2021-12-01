@@ -15,7 +15,7 @@ const FoodEntry = (props) => {
           <button type="submit" onClick={() => props.updateFood(document.querySelector('#textbox').value)}>Update</button>
         {/* </label> */}
       </form>
-      <button type="submit" onClick={() => props.deleteFood(document.querySelector('#textbox').value)}>Delete</button>
+      <button type="submit" onClick={() => props.deleteFood(props.name)}>Delete</button>
       {props.calories}
     </label>
     </div>

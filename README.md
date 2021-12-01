@@ -14,6 +14,6 @@
 <!-- Grab latest entries from database -->
 <!-- setstate with latest entries -->
 <!-- render new entries on webpage after creating them -->
-delete entry from database
-set up delete button to send delete request to database
-update state and re-render components
+<!-- delete entry from database -->
+<!-- set up delete button to send delete request to database -->
+<!-- update state and re-render components -->
