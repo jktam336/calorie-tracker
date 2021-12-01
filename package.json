@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "cross-env NODE_ENV=production node server/server.js",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development node server.js\""
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development node server/server.js\""
   },
   "nodemonConfig": {
     "ignore": [
-      "build",
-      "client"
+      "public",
+      "src"
     ]
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "express": "^4.16.3",
     "node-fetch": "^2.3.0",
+    "pg": "^8.7.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.6.3"
