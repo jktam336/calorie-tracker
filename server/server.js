@@ -3,10 +3,13 @@ const app = express()
 const port = 3000
 const path = require('path');
 const apiRouter = require('./routes/api');
+const cors = require('cors');
 
+// enable all CORS requests
+app.use(cors());
 
 // handle parsing request body
- app.use(express.json());
+app.use(express.json());
 //  app.use(express.urlencoded({ extended: true })); // might not need this
 
 // define route handlers
