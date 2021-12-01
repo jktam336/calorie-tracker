@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FoodEntry from './components/FoodEntry.jsx';
 import TotalsDisplay from './components/TotalsDisplay.jsx';
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
       <div>
         <TotalsDisplay totalCalories = {this.state.totalCalories} />
         <button onClick = {this.addFood}>Add Food</button>
+        <FoodEntry name = 'test food entry'calories = '100'/>
       </div>
     );
   }
