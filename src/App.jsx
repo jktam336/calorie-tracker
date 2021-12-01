@@ -13,7 +13,19 @@ class App extends Component {
   addFood() {
     console.log(`add food`);
     const url = "http://localhost:3000/api/food";
-    fetch(url, {method: 'POST'})
+    const data = {
+      name: "test5",
+      serving_size: 1, 
+      calories: 101
+    };
+    const init = {
+      method: 'POST',  
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    }
+    fetch(url, init)
       .then(res => res.json())
       .then(
         (result) => {
