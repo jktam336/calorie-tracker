@@ -5,6 +5,8 @@ const path = require('path');
 const apiRouter = require('./routes/api');
 const cors = require('cors');
 
+// localhost:8080/
+
 // enable all CORS requests
 app.use(cors());
 
@@ -16,12 +18,12 @@ app.use(express.json());
 app.use('/api', apiRouter);
 
 // statically serve everything in the build folder on the route '/public'
-app.use('/build', express.static(path.join(__dirname, '../public')));
+app.use('/public', express.static(path.join(__dirname, '../public')));
 
-// // serve index.html on the route '/'
-// app.get('/', (req, res) => {
-//   return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-// });
+// serve index.html on the route '/'
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+});
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
