@@ -3,7 +3,7 @@ const db = require('../models/foodModels');
 const foodController = {};
 
 foodController.getFood = (req, res, next) => {
-  const text  = 'SELECT * FROM "public"."foodTest2"';
+  const text  = 'SELECT * FROM "public"."foodTest2" ORDER BY "public"."foodTest2"._id';
   db
   .query(text)
   .then(data => {
