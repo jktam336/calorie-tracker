@@ -15,13 +15,13 @@ class App extends Component {
     this.updateFood = this.updateFood.bind(this);
   }
 
-  addFood(e, name) {
-    e.preventDefault();
+  addFood(name, serving_size, calories) {
+    // e.preventDefault();
     const url = "http://localhost:3000/api/food";
     const data = {
       name: name,
-      serving_size: 1, 
-      calories: 100
+      serving_size: serving_size, 
+      calories: calories
     };
     const init = {
       method: 'POST',  
@@ -74,7 +74,7 @@ class App extends Component {
   }
 
   updateFood(e, name, last_serving) {
-    console.log(`update food's`, name, last_serving);
+    console.log(e);
     e.preventDefault();
     const url = `http://localhost:3000/api/food?name=${name}&last_serving=${last_serving}`;
     const init = {
@@ -125,6 +125,7 @@ class App extends Component {
     const arrOfFoodEntries = this.state.foodEntries.map((entry, i) => <FoodEntry 
       key = {i} 
       name = {entry.name} 
+      last_serving = {entry.last_serving}
       last_entry_calories = {entry.last_entry_calories}
       deleteFood = {this.deleteFood}
       updateFood = {this.updateFood}

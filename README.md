@@ -24,8 +24,8 @@
 <!-- Calculate total calories in server and render on webpage -->
 <!-- Display date in a readable format -->
 <!-- Sort table by time created (using primary key) -->
-Create new menu for adding food when addFood button is clicked
-Hook up input box with addFood button
+<!-- Create new menu for adding food when addFood button is clicked -->
+<!-- Hook up input box with addFood button -->
 Consider making addFood it's own component that appears when a separate create food button is clicked
 Make sure menu disappears after submission
 Display last_serving size in oz
