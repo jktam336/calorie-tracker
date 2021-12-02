@@ -22,4 +22,10 @@
 <!-- Calculate the individual item’s calorie count in the server -->
 <!-- Render calorie count on the webpage -->
 <!-- Calculate total calories in server and render on webpage -->
+<!-- Display date in a readable format -->
+Create new menu for adding food when addFood button is clicked
 Hook up input box with addFood button
+Make sure menu disappears after click
+Display last_serving size in oz
+Make foodEntry component one line (flexbox?)
+Center everything
