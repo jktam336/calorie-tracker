@@ -9,9 +9,10 @@ router.get('/',
   (req, res) => res.status(200).json(res.locals.foodEntries)
 );
 
-router.get('/homeworld',
-foodController.getHomeworld,
-(req, res) => res.status(200).json(res.locals.homeworld[0])
+router.patch('/food',
+foodController.updateFood,
+foodController.getFood,
+(req, res) => res.status(200).json(res.locals.foodEntries)
 );
 
 router.delete('/food',

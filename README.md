@@ -17,3 +17,8 @@
 <!-- delete entry from database -->
 <!-- set up delete button to send delete request to database -->
 <!-- update state and re-render components -->
+<!-- Update the serving size in the database -->
+<!-- set up update button to send patch request to database -->
+Calculate the individual item’s calorie count in the server
+Render calorie count on the webpage
+Hook up input box with addFood button

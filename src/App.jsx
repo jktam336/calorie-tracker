@@ -14,6 +14,7 @@ class App extends Component {
     }
     this.addFood = this.addFood.bind(this);
     this.deleteFood = this.deleteFood.bind(this);
+    this.updateFood = this.updateFood.bind(this);
   }
 
   addFood() {
@@ -72,6 +73,31 @@ class App extends Component {
       )
   }
 
+  updateFood(e, name, last_serving) {
+    console.log(`update food's`, name, last_serving);
+    e.preventDefault();
+    const url = `http://localhost:3000/api/food?name=${name}&last_serving=${last_serving}`;
+    const init = {
+      method: 'PATCH'
+    }
+    fetch(url, init)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            foodEntries: result
+          });
+          console.log(`update response`, result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          throw(error);
+        }
+      )
+  }
+
   // fetch entries from database on component mount
   componentDidMount() {
     const url = "http://localhost:3000/api/";
@@ -99,6 +125,7 @@ class App extends Component {
       name = {entry.name} 
       calories = {entry.calories}
       deleteFood = {this.deleteFood}
+      updateFood = {this.updateFood}
       />)
     return(
       <div>

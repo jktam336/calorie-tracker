@@ -8,28 +8,23 @@ foodController.getFood = (req, res, next) => {
   .query(text)
   .then(data => {
     res.locals.foodEntries = data.rows;
-    // console.log(data.rows);
     next();
   })
   .catch(e => next(e));
 };
 
 foodController.addFood = (req, res, next) => {
-  // console.log(`this is req.body:`, req.body);
   // destructure req.body into column names
   const {name, serving_size, calories, fat = 0, cholesterol = 0, sodium = 0, carbohydrates = 0, fiber = 0, sugars = 0, protein = 0, last_serving = 0} = req.body;
-  // console.log(name, serving_size, calories, fat, cholesterol, sodium, carbohydrates, fiber, sugars, protein, last_serving);
+
   // postgreSQL query string
   const text = `INSERT INTO "public"."foodTest2" (name, serving_size, calories, fat, cholesterol, sodium, carbohydrates, fiber, sugars, protein, last_serving)
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "public"."foodTest2"._id`;
   // query parameters
   const values = [name, serving_size, calories, fat, cholesterol, sodium, carbohydrates, fiber, sugars, protein, last_serving];
-  // console.log(`this is values:`, values);
-
   db
     .query(text, values)
     .then(data => {
-      // console.log(data),
       next();
     }) 
     .catch(e => next(e));
@@ -37,36 +32,21 @@ foodController.addFood = (req, res, next) => {
 
 foodController.deleteFood = (req, res, next) => {
   const text = `DELETE FROM "public"."foodTest2" WHERE name = $1;`;
-  // const values = ['test6'];
   const values = [req.query.name];
   db
     .query(text, values)
     .then(data => {
-      // console.log(`delete query successful`);
       next();
     })
     .catch(e => next(e));
 };
 
-foodController.getHomeworld = (req, res, next) => {
-  // write code here
-  const text = 'SELECT planets.name, planets.rotation_period, planets.orbital_period, planets.diameter, planets.climate, planets.gravity, planets.terrain, planets.surface_water, planets.population FROM planets WHERE planets._id = $1';
-  const values = [req.query.id];
+foodController.updateFood = (req, res, next) => {
+  const text = `UPDATE "public"."foodTest2" SET last_serving = $2 WHERE name = $1;`;
+  const values = [req.query.name, req.query.last_serving];
   db
     .query(text, values)
     .then(data => {
-      console.log(data.rows);
-      if (data.rows.length !== 0) res.locals.homeworld = data.rows;
-      else res.locals.homeworld = [{
-        rotation_period: 'unknown',
-        orbital_period: 'unknown',
-        diameter: 'unknown',
-        climate: 'unknown',
-        gravity: 'unknown',
-        terrain: 'unknown',
-        surface_water: 'unknown',
-        population: 'unknown'
-      }]; 
       next();
     })
     .catch(e => next(e));
