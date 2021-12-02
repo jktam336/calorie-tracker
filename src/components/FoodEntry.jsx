@@ -10,7 +10,7 @@ const FoodEntry = (props) => {
             <button type="submit" onClick={(e) => props.updateFood(e, props.name, document.querySelector(`#textbox${props.name}`).value)}>Update</button>
         </form>
         <button type="submit" onClick={() => props.deleteFood(props.name)}>Delete</button>
-        {props.calories}
+        {props.last_entry_calories}
     </label>
     </div>
   );

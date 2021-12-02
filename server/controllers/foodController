@@ -7,7 +7,12 @@ foodController.getFood = (req, res, next) => {
   db
   .query(text)
   .then(data => {
-    res.locals.foodEntries = data.rows;
+    // for each foodEntry, add a last_entry_calories that calculates this last_serving's calories
+    res.locals.foodEntries = data.rows.map((entry) => {
+      const last_entry_calories = (entry.last_serving / entry.serving_size) * entry.calories;
+      return {...entry, last_entry_calories}
+    });
+    // res.locals.foodEntries = data.rows;
     next();
   })
   .catch(e => next(e));

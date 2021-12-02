@@ -7,10 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       totalCalories: 0,
-      foodEntries: [{
-        name: 'test props',
-        calories: 101
-      }]
+      foodEntries: []
     }
     this.addFood = this.addFood.bind(this);
     this.deleteFood = this.deleteFood.bind(this);
@@ -123,7 +120,7 @@ class App extends Component {
     const arrOfFoodEntries = this.state.foodEntries.map((entry, i) => <FoodEntry 
       key = {i} 
       name = {entry.name} 
-      calories = {entry.calories}
+      last_entry_calories = {entry.last_entry_calories}
       deleteFood = {this.deleteFood}
       updateFood = {this.updateFood}
       />)

@@ -19,6 +19,7 @@
 <!-- update state and re-render components -->
 <!-- Update the serving size in the database -->
 <!-- set up update button to send patch request to database -->
-Calculate the individual item’s calorie count in the server
-Render calorie count on the webpage
+<!-- Calculate the individual item’s calorie count in the server -->
+<!-- Render calorie count on the webpage -->
+Calculate total calories in server and render on webpage
 Hook up input box with addFood button
