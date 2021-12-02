@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FoodEntry from './components/FoodEntry.jsx';
 import TotalsDisplay from './components/TotalsDisplay.jsx';
+import AddFoodMenu from './components/AddFoodMenu.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -14,13 +15,13 @@ class App extends Component {
     this.updateFood = this.updateFood.bind(this);
   }
 
-  addFood() {
-    console.log(`add food`);
+  addFood(e, name) {
+    e.preventDefault();
     const url = "http://localhost:3000/api/food";
     const data = {
-      name: "test6",
+      name: name,
       serving_size: 1, 
-      calories: 101
+      calories: 100
     };
     const init = {
       method: 'POST',  
@@ -131,7 +132,7 @@ class App extends Component {
     return(
       <div>
         <TotalsDisplay totalCalories = {this.state.totalCalories} />
-        <button onClick = {this.addFood}>Add Food</button>
+        <AddFoodMenu addFood = {this.addFood} />
         {arrOfFoodEntries}
       </div>
     );
