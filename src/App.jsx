@@ -34,7 +34,8 @@ class App extends Component {
       .then(
         (result) => {
           this.setState({
-            foodEntries: result
+            totalCalories: result.totalCalories,
+            foodEntries: result.foodEntries
           });
           console.log(`post response`, result);
         },
@@ -57,7 +58,8 @@ class App extends Component {
       .then(
         (result) => {
           this.setState({
-            foodEntries: result
+            totalCalories: result.totalCalories,
+            foodEntries: result.foodEntries
           });
           console.log(`delete response`, result);
         },
@@ -82,7 +84,8 @@ class App extends Component {
       .then(
         (result) => {
           this.setState({
-            foodEntries: result
+            totalCalories: result.totalCalories,
+            foodEntries: result.foodEntries
           });
           console.log(`update response`, result);
         },
@@ -103,7 +106,8 @@ class App extends Component {
       .then(
         (result) => {
           this.setState({
-            foodEntries: result
+            totalCalories: result.totalCalories,
+            foodEntries: result.foodEntries
           });
           console.log(`get response`, result);
         },
