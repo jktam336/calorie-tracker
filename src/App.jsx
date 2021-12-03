@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FoodEntry from './components/FoodEntry.jsx';
 import TotalsDisplay from './components/TotalsDisplay.jsx';
 import AddFoodMenu from './components/AddFoodMenu.jsx';
+import Logo from './Logo.png';
 
 class App extends Component {
   constructor(props) {
@@ -131,7 +132,8 @@ class App extends Component {
       updateFood = {this.updateFood}
       />)
     return(
-      <div>
+      <div id='board'>
+        <img src={Logo}/>
         <TotalsDisplay totalCalories = {this.state.totalCalories} />
         <AddFoodMenu addFood = {this.addFood} />
         {arrOfFoodEntries}

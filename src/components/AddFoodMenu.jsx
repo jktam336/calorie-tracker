@@ -9,14 +9,14 @@ const AddFoodMenu = (props) => {
         props.addFood(e, document.querySelector(`#nameInputBox`).value);
         }}>   */}
       {/* <form> */}
-        <label htmlFor="nameInputBox">Name
-          <input id={`nameInputBox`} type="text"></input>
+        <label htmlFor="nameInputBox">
+          <input id={`nameInputBox`} type="text" placeholder='Name'></input>
         </label>
-        <label htmlFor="servingSizeInputBox">Serving Size
-          <input id={`servingSizeInputBox`} type="text"></input>
+        <label htmlFor="servingSizeInputBox">
+          <input id={`servingSizeInputBox`} type="text" placeholder='Serving Size'></input>
         </label>
-        <label htmlFor="caloriesInputBox">Calories per Serving
-          <input id={`caloriesInputBox`} type="text"></input>
+        <label htmlFor="caloriesInputBox">
+          <input id={`caloriesInputBox`} type="text" placeholder='Calories per Serving'></input>
         </label>
           <button type="submit" onClick = {() => {
             props.addFood(

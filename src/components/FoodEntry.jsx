@@ -4,19 +4,21 @@ import React from 'react';
 const FoodEntry = (props) => {
   return (
     <div id="foodEntry">
-      <label>{props.name}
-        <form onSubmit={(e) => {
-              props.updateFood(e, props.name, document.querySelector(`#textbox${props.name}`).value)
-              document.querySelector(`#textbox${props.name}`).value = null;
-              }}>  
-            <input id={`textbox${props.name}`} type="text" placeholder={`${props.last_serving} oz`}></input>
-            <button type="submit" onClick={(e) => {
-              props.updateFood(e, props.name, document.querySelector(`#textbox${props.name}`).value)
-              document.querySelector(`#textbox${props.name}`).value = null;
-              }}>Update</button>
-        </form>
-        <button type="submit" onClick={() => props.deleteFood(props.name)}>Delete</button>
-        {props.last_entry_calories}
+      <label id='foodLabel'><span id='foodName'>{props.name}</span>
+        <div id='foodFormDiv'>
+          <form id='foodform' onSubmit={(e) => {
+                props.updateFood(e, props.name, document.querySelector(`#textbox${props.name}`).value)
+                document.querySelector(`#textbox${props.name}`).value = null;
+                }}>  
+              <input id={`textbox${props.name}`} type="text" placeholder={`${props.last_serving} oz`}></input>
+              <button type="submit" onClick={(e) => {
+                props.updateFood(e, props.name, document.querySelector(`#textbox${props.name}`).value)
+                document.querySelector(`#textbox${props.name}`).value = null;
+                }}>Update</button>
+          </form>
+          <button type="submit" onClick={() => props.deleteFood(props.name)}>Delete</button>
+        </div>
+        <span id='individualCalories'>{props.last_entry_calories}</span>
     </label>
     </div>
   );

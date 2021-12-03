@@ -28,7 +28,7 @@
 <!-- Hook up input box with addFood button -->
 Consider making addFood it's own component that appears when a separate create food button is clicked
 Make sure menu disappears after submission
-Display last_serving size in oz
+<!-- Display last_serving size in oz -->
 Make foodEntry component one line (flexbox?)
 Center everything
 Add some borders

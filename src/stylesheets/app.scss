@@ -1,0 +1,75 @@
+$lightOrange: #fde99f;
+$darkOrange: #F57921;
+$lightBlue: #ACCEEC;
+$darkBlue: #398BD4;
+$primaryBlack: #22292F;
+$secondaryBlack: #606F7B;
+$lightGrey: #8795A1;
+$superLight: #FFFFFF;
+$bluePrimary: #1a73e8;
+$logoColor: #FFF3B8;
+
+html {
+    background-color: $logoColor;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
+#AddFoodMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5em;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#foodEntry {
+    border: 1px solid $lightGrey;
+    margin: 5px;
+    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    // background-color: $bluePrimary;
+    // color: $superLight;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+#foodLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+}
+
+#foodform {
+    margin: 0px;
+}
+
+#foodFormDiv {
+    display: flex;
+    align-items: center;
+}
+
+#foodname {
+    min-width: 50px;
+}
+
+#individualCalories {
+    min-width: 50px;
+    text-align: right;
+}
