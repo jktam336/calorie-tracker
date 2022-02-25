@@ -4,33 +4,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest --verbose",
     "start": "cross-env NODE_ENV=production node server/server.js",
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\"",
     "commit": "cz"
   },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  },
   "nodemonConfig": {
     "ignore": [
-      "public",
-      "src"
+      "public"
     ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-regular-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.16.3",
     "node-fetch": "^2.3.0",
     "node-sass": "^6.0.1",
     "pg": "^8.7.1",
-    "react": "^16.5.2",
+    "react": "^17.0.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.6.3",
+    "react-router-dom": "^6.2.1",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0"
   },
@@ -38,6 +42,10 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
@@ -46,8 +54,11 @@
     "eslint-plugin-react": "^7.27.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15",
+    "react-test-renderer": "^17.0.2",
     "style-loader": "^3.3.1",
+    "supertest": "^6.2.2",
     "url-loader": "^4.1.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
