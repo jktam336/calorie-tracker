@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
+// app.use((req, res) => res.status(404).sendFile(path.join(__dirname, '../index.html')));
 
 // express error handler
 app.use((err, req, res, next) => {
