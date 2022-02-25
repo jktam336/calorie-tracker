@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --passWithNoTests",
-    "start": "cross-env NODE_ENV=production node server/server.js",
+    "test": "jest --verbose",
+    "start": "cross-env NODE_ENV=production node server/start.js",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\"",
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/start.js\"",
     "commit": "cz"
   },
   "jest": {
