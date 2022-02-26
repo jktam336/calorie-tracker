@@ -11,7 +11,7 @@ const FoodEntry = (props) => {
                 document.querySelector(`#textbox${props.name}`).value = null;
                 }}>  
               <input id={`textbox${props.name}`} type="text" placeholder={`${props.last_serving} oz`}></input>
-              <button type="submit" onClick={(e) => {
+              <button type="button" onClick={(e) => {
                 props.updateFood(e, props.name, document.querySelector(`#textbox${props.name}`).value)
                 document.querySelector(`#textbox${props.name}`).value = null;
                 }}>Update</button>
